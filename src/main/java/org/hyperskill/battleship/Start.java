@@ -1,13 +1,7 @@
 package org.hyperskill.battleship;
 
 public class Start {
-    private static Field field;
-    private static Logic logic;
-
-    public Start() {
-        field = new Field();
-        logic = new Logic(field);
-    }
+    private static Logic logic = new Logic();
 
     public void startGame() {
         logic.createShips();

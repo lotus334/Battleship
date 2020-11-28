@@ -1,9 +1,12 @@
 package org.hyperskill.battleship;
 
+import java.util.*;
+
 public class Field {
     private static char[][] field = new char[10][10];
+    Set<List<Integer>> closed = new HashSet<>();
 
-    public Field() {
+    Field() {
         for (char[] row : field) {
             for (int j = 0; j < row.length; j++) {
                 row[j] = '~';
@@ -11,8 +14,8 @@ public class Field {
         }
     }
 
-    public void printField() {
-        System.out.println("  1 2 3 4 5 6 7 8 9 10");
+    void printField() {
+        System.out.println("\n  1 2 3 4 5 6 7 8 9 10");
         char rowLetter = 'A';
         for (char[] row : field) {
             System.out.print(rowLetter++ + " ");
@@ -21,10 +24,10 @@ public class Field {
             }
             System.out.println();
         }
+        System.out.println();
     }
 
-    public static void main(String[] args) {
-        Field field = new Field();
-        field.printField();
+    void setPoint(int x, int y, char ch) {
+        field[x][y] = ch;
     }
 }
