@@ -37,9 +37,9 @@ public abstract class Ship {
      * @param _columnEnd - int, coordinates
      * @return boolean, true if the coordinates meet condition.
      */
-    boolean setCoordinates(int _rowBegin, int _columnBegin, int _rowEnd, int _columnEnd) {
+    public boolean setCoordinates(int _rowBegin, int _columnBegin, int _rowEnd, int _columnEnd) {
         if (_rowBegin == _rowEnd || _columnBegin == _columnEnd) {
-            if (_rowEnd - _rowBegin != size - 1 && _columnEnd - columnBegin != size - 1) {
+            if (_rowEnd - _rowBegin != size - 1 && _columnEnd - _columnBegin != size - 1) {
                 System.out.printf("Error! Wrong length of the %s! Try again:\n", name);
                 return false;
             }

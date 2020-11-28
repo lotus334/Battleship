@@ -1,7 +1,7 @@
 package org.hyperskill.battleship.ships;
 
 public class Cruiser extends Ship {
-    Cruiser(int _size, String _name) {
+    public Cruiser(int _size, String _name) {
         super(_size, _name);
     }
 }
