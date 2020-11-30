@@ -20,6 +20,9 @@ public class Battlefield {
         }
     }
 
+    /**
+     * @return - String, the field with fog of war.
+     */
     public String toFogOfWar() {
         StringBuilder result = new StringBuilder("  1 2 3 4 5 6 7 8 9 10\n");
         for (int i = 0; i < SIZE; i++) {
@@ -36,6 +39,9 @@ public class Battlefield {
         return result.toString();
     }
 
+    /**
+     * @return - String, the field without fog of war.
+     */
     public String toOpenField() {
         StringBuilder result = new StringBuilder("  1 2 3 4 5 6 7 8 9 10\n");
         for (int i = 0; i < SIZE; i++) {
