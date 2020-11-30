@@ -5,26 +5,28 @@ import java.util.Scanner;
 public class Game {
     public void start() {
         Scanner scanner = new Scanner(System.in);
-        Battlefield battlefield = new Battlefield();
+        Logic battlefield = new Logic();
+        Battlefield First = new Battlefield();
+        Battlefield Second = new Battlefield();
         System.out.println("Player 1, place your ships on the game friendField\n");
-        battlefield.initField(battlefield.fieldFirst);
+        battlefield.initField(First);
         System.out.println("Press Enter and pass the move to another player\n");
         scanner.nextLine();
         System.out.println("Player 2, place your ships to the game friendField");
-        battlefield.initField(battlefield.fieldSecond);
+        battlefield.initField(Second);
         System.out.println("Press Enter and pass the move to another player\n");
         scanner.nextLine();
         boolean isFirst = true;
         int player = 0;
-        char[][] friendField;
-        char[][] enemyField;
+        Battlefield friendField;
+        Battlefield enemyField;
         while (!battlefield.isFinished) {
             player = isFirst ? 1 : 2;
-            friendField = isFirst ? battlefield.fieldFirst : battlefield.fieldSecond;
-            enemyField = isFirst ? battlefield.fieldSecond : battlefield.fieldFirst;
-            System.out.println(battlefield.toFogOfWar(enemyField));
+            friendField = isFirst ? First : Second;
+            enemyField = isFirst ? Second : First;
+            System.out.println(enemyField.toFogOfWar());
             System.out.println("---------------------\n");
-            System.out.println(battlefield.toOpenField(friendField));
+            System.out.println(friendField.toOpenField());
             System.out.printf("Player %d, it's your turn:\n", player);
             if (!battlefield.takeAShot(enemyField)) {
                 System.out.println("You missed!");
