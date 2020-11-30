@@ -56,6 +56,8 @@ public abstract class Ship {
         return true;
     }
 
+    public char getSHIP_SYMBOL() { return SHIP_SYMBOL; }
+
     public int getSize() {
         return size;
     }
@@ -72,9 +74,7 @@ public abstract class Ship {
         return isPlaces;
     }
 
-    public int getRowBegin() {
-        return rowBegin;
-    }
+    public int getRowBegin() { return rowBegin; }
 
     public int getRowEnd() {
         return rowEnd;
