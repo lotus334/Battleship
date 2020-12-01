@@ -6,24 +6,24 @@ public class Game {
     public void start() {
         Scanner scanner = new Scanner(System.in);
         Logic battlefield = new Logic();
-        Battlefield First = new Battlefield();
-        Battlefield Second = new Battlefield();
+        Battlefield first = new Battlefield();
+        Battlefield second = new Battlefield();
         System.out.println("Player 1, place your ships on the game friendField\n");
-        battlefield.initField(First);
+        battlefield.initField(first);
         System.out.println("Press Enter and pass the move to another player\n");
         scanner.nextLine();
         System.out.println("Player 2, place your ships to the game friendField");
-        battlefield.initField(Second);
+        battlefield.initField(second);
         System.out.println("Press Enter and pass the move to another player\n");
         scanner.nextLine();
         boolean isFirst = true;
         int player = 0;
         Battlefield friendField;
         Battlefield enemyField;
-        while (!battlefield.isFinished) {
+        while (!battlefield.isFinished()) {
             player = isFirst ? 1 : 2;
-            friendField = isFirst ? First : Second;
-            enemyField = isFirst ? Second : First;
+            friendField = isFirst ? first : second;
+            enemyField = isFirst ? second : first;
             System.out.println(enemyField.toFogOfWar());
             System.out.println("---------------------\n");
             System.out.println(friendField.toOpenField());
